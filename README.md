@@ -12,8 +12,6 @@
 
 2. 首先对第一段序列进行卷积运算，得到的输出和第二段序列进行线性变换后，再进行卷积运算，以此类推：
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=output_n&space;=&space;Conv(w_1&space;*&space;output_{n-1}&space;&plus;&space;w_2&space;*&space;input_n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?output_n&space;=&space;Conv(w_1&space;*&space;output_{n-1}&space;&plus;&space;w_2&space;*&space;input_n)" title="output_n = Conv(w_1 * output_{n-1} + w_2 * input_n)" /></a>
-
 ![2](image/2.png)
 
 ​		整个过程和RNN本质上是一样的，只是利用卷积核的特性，使得运算次数从序列长度（6）降低到卷积核尺寸（3）。
