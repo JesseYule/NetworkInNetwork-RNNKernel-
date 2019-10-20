@@ -1,9 +1,5 @@
 
 
-<head>
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-</head>
-
 ##基于RNN卷积核的Network in Network模型
 
 ​		和LeNet（传统CNN）相比，Network in Network模型用微型网络（MLP）作为卷积核，增强了卷积核提取非线性特征的能力（原始卷积核只能提取线性特征）。
@@ -18,10 +14,10 @@
 
 2. 首先对第一段序列进行卷积运算，得到的输出和第二段序列进行线性变换后，再进行卷积运算，以此类推：
 
-$$output_n = Conv(w_1 * output_{n-1} + w_2 * input_n)$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=output_n&space;=&space;Conv(w_1&space;*&space;output_{n-1}&space;&plus;&space;w_2&space;*&space;input_n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?output_n&space;=&space;Conv(w_1&space;*&space;output_{n-1}&space;&plus;&space;w_2&space;*&space;input_n)" title="output_n = Conv(w_1 * output_{n-1} + w_2 * input_n)" /></a>
 
 ![2](image/2.png)
 
-​		整个过程和RNN本质上是一样的，只是利用卷积核的特性，运算次数从序列长度（6）降低到卷积核尺寸（3）。
+​		整个过程和RNN本质上是一样的，只是利用卷积核的特性，使得运算次数从序列长度（6）降低到卷积核尺寸（3）。
 
 3. 线性变换采用大小为1的卷积核进行卷积运算，可大大减少参数量。
