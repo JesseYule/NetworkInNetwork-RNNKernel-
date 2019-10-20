@@ -1,10 +1,10 @@
 
 
-# NetworkInNetwork-RNNKernel-
+<head>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+</head>
 
-基于RNN卷积核的Network in Network模型
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+##基于RNN卷积核的Network in Network模型
 
 ​		和LeNet（传统CNN）相比，Network in Network模型用微型网络（MLP）作为卷积核，增强了卷积核提取非线性特征的能力（原始卷积核只能提取线性特征）。
 
@@ -14,13 +14,13 @@
 
 1. 以卷积核尺寸为3为例，假设下图每个方框表示一个词向量，首先根据不同的时刻对序列进行遮掩，生成三个子序列，假设序列有六个词，那么生成的每段序列有4个词：
 
-![1](/Users/junjieyu/Documents/programming/github_projects/NetworkInNetwork-RNNKernel-/image/1.png)
+![1](image/1.png)
 
 2. 首先对第一段序列进行卷积运算，得到的输出和第二段序列进行线性变换后，再进行卷积运算，以此类推：
 
 $$output_n = Conv(w_1 * output_{n-1} + w_2 * input_n)$$
 
-![2](/Users/junjieyu/Documents/programming/github_projects/NetworkInNetwork-RNNKernel-/image/2.png)
+![2](image/2.png)
 
 ​		整个过程和RNN本质上是一样的，只是利用卷积核的特性，运算次数从序列长度（6）降低到卷积核尺寸（3）。
 
